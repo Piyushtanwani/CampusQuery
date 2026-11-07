@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/favicon.png">
+    <title>Documentation — CampusQuery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="landing-view">
+        <div class="top-accent-bar"></div>
+        <nav class="landing-nav">
+            <div class="nav-brand">
+                <img src="/assets/campusquery_icon.png" alt="CampusQuery" style="width: 24px; height: 24px; object-fit: contain; transform: scale(2.0) translate(6px, -1px); transform-origin: center; margin: 0 18px;">
+                <span>CampusQuery</span>
+            </div>
+            <div class="nav-links" style="display: flex; gap: 12px; align-items: center;">
+                <button onclick="localStorage.setItem('dau_buddy_view', 'landing'); window.location.href='/'"
+                    class="nav-docs-btn"
+                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    <i class="fa-solid fa-house"></i> Home
+                </button>
+                <button onclick="window.location.href='/docs'" class="nav-docs-btn nav-docs-btn-active"
+                    style="padding: 8px 16px; background: #0f3b73; color: #ffffff; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    <i class="fa-solid fa-book"></i> Docs
+                </button>
+                <div class="community-dropdown-container">
+                    <button class="nav-docs-btn"
+                        style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                        <i class="fa-solid fa-users"></i> Community <i class="fa-solid fa-chevron-down"
+                            style="font-size: 10px;"></i>
+                    </button>
+                    <div class="community-dropdown-menu">
+                        <a href="https://github.com/Piyushtanwani/mcp-server/blob/Main/docs/contribution.md#contributing-to-campusquery-mcp-server"
+                            target="_blank" class="community-dropdown-item">
+                            <i class="fa-brands fa-github" style="width: 16px; text-align: center;"></i> Contribute
+                        </a>
+                        <a href="https://github.com/Piyushtanwani/mcp-server/issues/new/choose" target="_blank"
+                            class="community-dropdown-item">
+                            <i class="fa-solid fa-bug" style="width: 16px; text-align: center;"></i> Raise an issue
+                        </a>
+                        <a href="https://github.com/Piyushtanwani/mcp-server" target="_blank"
+                            class="community-dropdown-item">
+                            <i class="fa-solid fa-star" style="width: 16px; text-align: center;"></i> Leave a star
+                        </a>
+                    </div>
+                </div>
+                <button onclick="event.preventDefault(); if(window.openLoginModal) window.openLoginModal(); else window.location.href='/?view=login';" class="nav-signout-btn" id="docs-login-btn">Sign
+                    In</button>
+                <div class="profile-container" id="landing-profile-container"
+                    style="position: relative; display: none;">
+                    <img id="landing-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
+                        referrerpolicy="no-referrer" alt="Profile"
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+
+                    <div id="landing-profile-dropdown" class="profile-dropdown"
+                        style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
+                        <div class="profile-info"
+                            style="position: relative; padding: 24px; text-align: center; border-bottom: 1px solid #f0f0f0;">
+                            <button id="landing-close-profile-btn"
+                                style="position: absolute; top: 12px; right: 12px; background: transparent; border: none; cursor: pointer; font-size: 18px; color: #555; transition: color 0.2s;"><i
+                                    class="fa-solid fa-xmark"></i></button>
+                            <img id="landing-dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user"
+                                referrerpolicy="no-referrer"
+                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                            <h3 id="landing-dropdown-name"
+                                style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">
+                                Welcome!</h3>
+                            <p id="landing-dropdown-email"
+                                style="margin: 0 0 8px 0; font-size: 14px; color: #555; font-family: 'Open Sans', sans-serif;">
+                                Authenticated User</p>
+                            <span id="landing-dropdown-role"
+                                style="display: inline-block; background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; font-family: 'Open Sans', sans-serif; border: 1px solid #bae6fd;">Role</span>
+                        </div>
+                        <div class="profile-actions" style="padding: 8px;">
+                            <button id="landing-nav-dashboard-btn" onclick="window.location.href='/maintainer'"
+                                style="width: 100%; padding: 12px 16px; background: transparent; border: none; text-align: left; cursor: pointer; font-size: 15px; color: #333; font-family: 'Open Sans', sans-serif; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-weight: 500; transition: background 0.2s;">
+                                <i class="fa-solid fa-chart-line"
+                                    style="color: #555; font-size: 18px;"></i> Analytics
+                            </button>
+                            <button id="landing-feedback-btn" class="nav-feedback-btn"
+                                style="width: 100%; padding: 12px 16px; background: transparent; border: none; text-align: left; cursor: pointer; font-size: 15px; color: #333; font-family: 'Open Sans', sans-serif; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-weight: 500; transition: background 0.2s;">
+                                <i class="fa-regular fa-comment-dots"
+                                    style="color: #555; font-size: 18px;"></i> Feedback
+                            </button>
+                            <button id="landing-logout-btn"
+                                style="width: 100%; padding: 12px 16px; background: transparent; border: none; text-align: left; cursor: pointer; font-size: 15px; color: #333; font-family: 'Open Sans', sans-serif; border-radius: 8px; display: flex; align-items: center; gap: 12px; font-weight: 500; transition: background 0.2s;">
+                                <i class="fa-solid fa-arrow-right-from-bracket"
+                                    style="color: #555; font-size: 18px;"></i> Sign out
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="landing-hero" style="padding: 30px 20px; text-align: center;">
+            <div class="hero-content">
+                <h1 style="margin-bottom: 10px;">Official <span class="hero-highlight">Documentation</span></h1>
+                <p style="margin-bottom: 10px;">Learn how to connect Claude Desktop, Cursor, Windsurf, and OpenCode to CampusQuery Server.</p>
+            </div>
+        </header>
+
+        <div style="background: #f4f6f9; padding: 60px 20px; min-height: 80vh;">
+            <div class="docs-layout"
+                style="display: flex; max-width: 1200px; margin: 0 auto; gap: 40px; width: 100%; box-sizing: border-box; align-items: flex-start;">
+                <aside class="docs-sidebar">
+                    <h3>Contents</h3>
+                    <ul class="docs-nav">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#editor-configs">Editor Configurations</a></li>
+                        <li><a href="#available-tools">Available Tools</a></li>
+                    </ul>
+                </aside>
+
+                <main class="docs-content"
+                    style="background: #ffffff; padding: 40px 48px; flex: 1; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #eaeaea;">
+                    <section id="overview">
+                        <h2 style="color: #0f3b73; margin-top: 0; font-size: 32px;">CampusQuery Server</h2>
+                        <p style="color: #555; line-height: 1.8; font-size: 16px;">An MCP platform providing AI
+                            assistants with structured access to DA-IICT faculty, staff, library, timetable, academic
+                            calendar, and scholars data through PostgreSQL-backed retrieval services.</p>
+                    </section>
+
+                    <hr class="docs-divider" style="border: none; border-top: 1px solid #e0e0e0; margin: 40px 0;">
+
+                    <section id="features">
+                        <h3 style="color: #111; border-bottom: 2px solid #eef2f6; padding-bottom: 8px;"><i
+                                class="fa-solid fa-star" style="color: #0f3b73; margin-right: 8px;"></i> Features</h3>
+                        <ul class="docs-list" style="color: #555; line-height: 1.8;">
+                            <li><strong>Faculty Tools:</strong> List faculty, search by name or expertise, view full
+                                profiles, and trigger live website syncing.</li>
+                            <li><strong>Staff Tools:</strong> List staff, search by name or designation, view full
+                                profiles, and trigger live website syncing.</li>
+                            <li><strong>Scholars Tools:</strong> List Ph.D. scholars, search by name or research area,
+                                view detailed profiles.</li>
+                            <li><strong>Library OPAC Tools:</strong> Instantly search the DA-IICT library catalog (over
+                                28,000 records) and retrieve detailed book metadata using PostgreSQL full-text search.
+                            </li>
+                            <li><strong>Timetable Tools:</strong> Query faculty schedules, course timings, free time
+                                slots, and full program batch timetables.</li>
+                            <li><strong>Calendar Tools:</strong> Query academic calendar events, examination schedules,
+                                semester activities, and holidays.</li>
+                            <li><strong>Secure Authentication:</strong> All endpoints are secured by an ASGI
+                                authentication middleware that verifies API keys.</li>
+                        </ul>
+                    </section>
+
+                    <hr class="docs-divider" style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
+
+                    <section id="architecture">
+                        <h3 style="color: #111; border-bottom: 2px solid #eef2f6; padding-bottom: 8px;"><i
+                                class="fa-solid fa-sitemap" style="color: #0f3b73; margin-right: 8px;"></i> Architecture
+                        </h3>
+                        <div class="code-block-wrapper"
+                            style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin: 16px 0; overflow-x: auto;">
+                            <pre style="margin: 0;"><code style="color: #333; font-family: monospace; font-size: 13px;">Claude / Cursor / OpenCode
+        │
+        ▼
+   Auth Middleware (Bearer Token)
+        │
+        ▼
+   FastMCP SSE Application
+        │
+ ┌──────┼──────────┬──────────┬──────────┬─────────┐
+ │      │          │          │          │         │
+Faculty Staff   Library   Timetable  Calendar   Scholar
+Service Service Service   Service    Service    Service
+ │      │          │          │          │         │
+ └──────────── PostgreSQL (Local) ─────────────────┘</code></pre>
+                        </div>
+                    </section>
+
+                    <hr class="docs-divider" style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
+
+                    <section id="editor-configs">
+                        <h3 style="color: #111; border-bottom: 2px solid #eef2f6; padding-bottom: 8px;"><i
+                                class="fa-solid fa-code" style="color: #0f3b73; margin-right: 8px;"></i> Editor
+                            Configurations</h3>
+                        <p style="color: #555; line-height: 1.6;">Copy the configurations directly from your web
+                            dashboard to ensure your API keys are correctly injected.</p>
+
+                        <h4 style="color: #222; margin-top: 24px;">1. Claude Desktop (HTTP/SSE via Proxy)</h4>
+                        <p style="color: #555; line-height: 1.6;">Claude Desktop connects to our HTTP/SSE server using a
+                            local <code
+                                style="background: #eef2f6; padding: 2px 6px; border-radius: 4px; color: #d90429;">npx mcp-remote</code>
+                            bridge to securely pass the Server-Sent Events stream into Claude's memory.</p>
+                        <div
+                            style="background: #fff3cd; color: #856404; border: 1px solid #ffeeba; border-radius: 4px; padding: 8px 12px; margin-bottom: 12px; font-size: 12px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-brands fa-node-js" style="font-size: 16px; color: #68a063;"></i>
+                            <span><strong>Node.js Required:</strong> You must have <a
+                                    href="https://nodejs.org/en/download" target="_blank"
+                                    style="color: #856404; font-weight: bold; text-decoration: underline;">Node.js
+                                    installed</a> on your PC to use this Claude Desktop configuration.</span>
+                        </div>
+                        <div class="code-block-wrapper"
+                            style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin: 16px 0; overflow-x: auto;">
+                            <pre style="margin: 0;"><code style="color: #333; font-family: monospace; font-size: 13px;">{
+  "mcpServers": {
+    "CampusQuery": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://127.0.0.1:8001/mcp/sse",
+        "--allow-http",
+        "--transport",
+        "sse-only",
+        "--header",
+        "Authorization:${AUTH_HEADER}"
+      ],
+      "env": {
+        "AUTH_HEADER": "Bearer &lt;YOUR_API_KEY&gt;"
+      }
+    }
+  }
+}</code></pre>
+                        </div>
+
+                        <h4 style="color: #222; margin-top: 32px;">2. Cursor / Windsurf (Native HTTP/SSE)</h4>
+                        <p style="color: #555; line-height: 1.6;">Cursor and Windsurf support direct SSE network
+                            connections. You only need to supply the connection URL, the explicit type flag, and your
+                            API key header:</p>
+                        <div class="code-block-wrapper"
+                            style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin: 16px 0; overflow-x: auto;">
+                            <pre style="margin: 0;"><code style="color: #333; font-family: monospace; font-size: 13px;">{
+  "mcpServers": {
+    "CampusQuery": {
+      "type": "sse",
+      "url": "http://127.0.0.1:8001/mcp/sse",
+      "headers": {
+        "Authorization": "Bearer &lt;YOUR_API_KEY&gt;"
+      }
+    }
+  }
+}</code></pre>
+                        </div>
+
+                        <h4 style="color: #222; margin-top: 32px;">3. OpenCode (Remote HTTP/SSE)</h4>
+                        <p style="color: #555; line-height: 1.6;">OpenCode connects using the <strong>remote</strong>
+                            type flag:</p>
+                        <div class="code-block-wrapper"
+                            style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 16px; margin: 16px 0; overflow-x: auto;">
+                            <pre style="margin: 0;"><code style="color: #333; font-family: monospace; font-size: 13px;">{
+  "mcpServers": {
+    "CampusQuery": {
+      "type": "remote",
+      "url": "http://127.0.0.1:8001/mcp/sse",
+      "headers": {
+        "Authorization": "Bearer &lt;YOUR_API_KEY&gt;"
+      }
+    }
+  }
+}</code></pre>
+                        </div>
+                    </section>
+
+                    <hr class="docs-divider" style="border: none; border-top: 1px solid #eee; margin: 32px 0;">
+
+                    <section id="available-tools">
+                        <h3 style="color: #111; border-bottom: 2px solid #eef2f6; padding-bottom: 8px;"><i
+                                class="fa-solid fa-toolbox" style="color: #0f3b73; margin-right: 8px;"></i> Available
+                            Tools & Queries</h3>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Faculty</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">list_faculty()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">search_faculty(query)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_faculty_details(name_or_email)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">search_faculty_by_expertise(expertise)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">sync_faculty_data()</code>
+                            </p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example: "Who
+                                is the faculty expert in Machine Learning?"</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Staff</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">list_staff()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">search_staff(query)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_staff_details(name_or_email)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">sync_staff_data()</code></p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example: "Who
+                                is the placement coordinator?"</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Scholars</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">list_scholars()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">search_scholars(query)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_scholar_details(name)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">sync_scholar_data()</code></p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example:
+                                "Find Ph.D. scholars researching Machine Learning."</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Library</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">search_library_books(query, limit)</code>,
+                                <code style="color: #d90429; font-size: 13px;">get_book_details(biblionumber)</code>
+                            </p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example:
+                                "Find books on Artificial Intelligence."</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Timetables</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">get_faculty_schedule(name, day)</code>,
+                                <code style="color: #d90429; font-size: 13px;">find_faculty_free_time(name, day)</code>,
+                                <code style="color: #d90429; font-size: 13px;">get_faculty_location(name, time, day)</code>,
+                                <code style="color: #d90429; font-size: 13px;">get_program_timetable(program, day)</code>,
+                                <code style="color: #d90429; font-size: 13px;">get_course_schedule(course_code)</code>,
+                                <code style="color: #d90429; font-size: 13px;">list_programs()</code>
+                            </p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example:
+                                "When is Prof. Manish Khare free on Tuesday?"</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Calendar</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">get_next_holiday()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_upcoming_holidays()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_all_holidays()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_midsem_dates()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_endsem_dates()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_next_academic_event()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_events_by_date(date)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">search_calendar(query, semester)</code></p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example:
+                                "When are the mid-semester exams?"</div>
+                        </div>
+
+                        <div class="tool-card"
+                            style="background: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+                            <h5 style="margin: 0 0 8px 0; color: #0f3b73; font-size: 16px;">Academic Documents</h5>
+                            <p style="margin: 0 0 8px 0; color: #555;"><code
+                                    style="color: #d90429; font-size: 13px;">search_academic_requirements(query)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">list_academic_documents()</code>, <code
+                                    style="color: #d90429; font-size: 13px;">get_academic_document_pages(filename)</code>, <code
+                                    style="color: #d90429; font-size: 13px;">sync_academic_documents()</code></p>
+                            <div class="example" style="font-size: 13px; color: #222; font-style: italic;">Example:
+                                "What are the core requirements for B.Tech ICT?"</div>
+                        </div>
+                    </section>
+
+                    <footer
+                        style="margin-top: 4rem; text-align: center; color: #888; font-size: 13px; border-top: 1px solid #eee; padding-top: 20px;">
+                        Made with ❤️ by DAU Students
+                    </footer>
+                </main>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const sections = document.querySelectorAll('.docs-content section');
+                const navLinks = document.querySelectorAll('.docs-nav a');
+
+                const observerOptions = {
+                    root: null, // Default to browser viewport
+                    rootMargin: '-10% 0px -70% 0px', // Trigger when section is in the top part of the screen
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            navLinks.forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === '#' + id) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => observer.observe(section));
+
+                // Dynamically update the SSE URL to match the current domain
+                const codes = document.querySelectorAll('code');
+                const dynamicUrl = window.location.origin + "/mcp/sse";
+                codes.forEach(code => {
+                    if (code.innerHTML.includes("127.0.0.1:8001")) {
+                        code.innerHTML = code.innerHTML.replace(/http:\/\/127\.0\.0\.1:8001\/mcp\/sse/g, dynamicUrl);
+                    }
+                });
+            });
+        </script>
+        <script src="/js/feedback.js"></script>
+        <script src="/js/app.js"></script>
+                <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const btn = document.getElementById("docs-login-btn");
+                const profileContainer = document.getElementById("landing-profile-container");
+                const profileTrigger = document.getElementById("landing-profile-trigger");
+                const dropdownAvatar = document.getElementById("landing-dropdown-avatar");
+                const dropdownName = document.getElementById("landing-dropdown-name");
+                const dropdownEmail = document.getElementById("landing-dropdown-email");
+                const dropdownRole = document.getElementById("landing-dropdown-role");
+
+                if (btn) {
+                    const storedSession = localStorage.getItem("dau_buddy_auth") || localStorage.getItem("dau_buddy_auth");
+                    if (storedSession) {
+                        try {
+                            const authData = JSON.parse(storedSession);
+                            if (authData.email && authData.credential) {
+                                btn.innerHTML = '<i class="fa-solid fa-code"></i> Dashboard';
+                                btn.className = 'nav-docs-btn';
+                                btn.onclick = function () {
+                                    window.location.href = '/api-keys';
+                                };
+
+                                // Show Profile
+                                if (profileContainer) {
+                                    profileContainer.style.display = "block";
+                                    if (authData.picture) {
+                                        if (profileTrigger) profileTrigger.src = authData.picture;
+                                        if (dropdownAvatar) dropdownAvatar.src = authData.picture;
+                                    }
+                                    if (authData.name && dropdownName) dropdownName.textContent = authData.name;
+                                    if (authData.email && dropdownEmail) dropdownEmail.textContent = authData.email;
+                                    if (authData.role && dropdownRole) dropdownRole.textContent = authData.role;
+                                }
+                            }
+                        } catch (e) { }
+                    }
+                }
+            });
+        </script>
+        <script src="/js/login-modal.js?v=2"></script>
+
+    
+
+</body>
+</html>
