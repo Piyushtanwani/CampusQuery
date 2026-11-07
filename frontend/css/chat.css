@@ -20,12 +20,12 @@
     --txt-secondary: #a0a0a0;
     --txt-muted: #666;
 
-    --brand: #3b82f6;
-    --brand-dark: #1d4ed8;
-    --brand-grad: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    --brand: #6366f1;
+    --brand-dark: #4f46e5;
+    --brand-grad: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #06b6d4 100%);
 
-    --user-bubble: #0d4b8f;
-    --ai-bubble: #1f1f1f;
+    --user-bubble: #4338ca;
+    --ai-bubble: #171f2e;
 
     --success: #10b981;
     --error: #ef4444;
@@ -43,29 +43,29 @@
 
 /* Light Theme */
 [data-theme="light"] {
-    --bg-app: #0f3b73;
+    --bg-app: #f1f5f9;
     --bg-sidebar: #ffffff;
-    --bg-main: #ffffff;
+    --bg-main: #f8fafc;
     --bg-surface: #ffffff;
-    --bg-hover: rgba(79, 70, 229, 0.06);
+    --bg-hover: rgba(79, 70, 229, 0.05);
     --bg-input: #ffffff;
 
-    --border: #e2e5ef;
-    --border-accent: rgba(79, 70, 229, 0.3);
+    --border: #e2e8f0;
+    --border-accent: rgba(79, 70, 229, 0.35);
 
     --txt-primary: #0f172a;
     --txt-secondary: #475569;
     --txt-muted: #94a3b8;
 
-    --brand: #0f3b73;
-    --brand-dark: #0a2952;
-    --brand-grad: linear-gradient(135deg, #0f3b73 0%, #1754a1 100%);
+    --brand: #4f46e5;
+    --brand-dark: #3730a3;
+    --brand-grad: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #06b6d4 100%);
 
-    --user-bubble: #0f3b73;
+    --user-bubble: #4338ca;
     --ai-bubble: #ffffff;
 
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
 /* ── Reset ────────────────────────────────────────────────────────────────── */
@@ -560,33 +560,34 @@ a {
 }
 
 .welcome-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.12) 0%, rgba(6, 182, 212, 0.12) 100%);
+    border: 1px solid rgba(79, 70, 229, 0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 28px;
     color: var(--brand);
-    margin-bottom: 24px;
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+    margin-bottom: 22px;
+    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.2);
 }
 
 .welcome-screen h2 {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--txt-primary);
     margin-bottom: 10px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
+    font-family: 'Outfit', sans-serif;
 }
 
 .welcome-sub {
-    font-size: 14px;
+    font-size: 14.5px;
     color: var(--txt-secondary);
-    max-width: 440px;
-    margin: 0 auto 36px;
+    max-width: 480px;
+    margin: 0 auto 34px;
     line-height: 1.6;
 }
 
@@ -594,15 +595,15 @@ a {
 .prompt-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
     width: 100%;
-    max-width: 620px;
+    max-width: 640px;
 }
 
 .prompt-card {
     background: var(--bg-surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 16px 18px;
     text-align: left;
     display: flex;
@@ -615,17 +616,52 @@ a {
 .prompt-card:hover {
     transform: translateY(-3px);
     border-color: var(--border-accent);
-    box-shadow: 0 8px 20px -4px rgba(15, 59, 115, 0.1);
+    box-shadow: 0 10px 24px -4px rgba(79, 70, 229, 0.14);
     background: var(--bg-hover);
 }
 
 .card-icon {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--brand);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(79, 70, 229, 0.1);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.card-icon.icon-teal {
+    background: rgba(6, 182, 212, 0.12);
+    color: #0891b2;
+}
+
+.card-icon.icon-indigo {
+    background: rgba(79, 70, 229, 0.12);
+    color: #4f46e5;
+}
+
+.card-icon.icon-amber {
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+}
+
+.card-icon.icon-emerald {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+}
+
+.card-icon.icon-purple {
+    background: rgba(139, 92, 246, 0.12);
+    color: #7c3aed;
+}
+
+.card-icon.icon-rose {
+    background: rgba(244, 63, 94, 0.12);
+    color: #e11d48;
+}
+
+.prompt-card:hover .card-icon {
+    transform: scale(1.08);
 }
 
 .card-text h4 {
@@ -1341,12 +1377,12 @@ a {
 
 /* Profile Dropdown Hover Effects */
 #profile-dropdown .profile-actions button:hover {
-    background-color: rgb(15 59 115 / 10%) !important;
-    color: #0f3b73 !important;
+    background-color: rgb(79 70 229 / 10%) !important;
+    color: #4f46e5 !important;
 }
 
 #profile-dropdown .profile-actions button:hover i {
-    color: #0f3b73 !important;
+    color: #4f46e5 !important;
 }
 
 #profile-dropdown .profile-actions #logout-btn:hover {

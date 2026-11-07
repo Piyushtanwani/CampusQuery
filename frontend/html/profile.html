@@ -25,23 +25,19 @@
     <div style="display: flex; flex-direction: column; min-height: 100vh; background: var(--bg-color);">
         <div class="top-accent-bar"></div>
         <nav class="landing-nav" id="profile-top-nav">
-            <div class="nav-brand">
-                <img src="/assets/campusquery_icon.png" alt="CampusQuery"
-                    style="width: 24px; height: 24px; object-fit: contain; transform: scale(2.0) translate(6px, -1px); transform-origin: center; margin: 0 18px;">
-                <span>CampusQuery</span>
-            </div>
-            <div class="nav-links" style="display: flex; gap: 12px; align-items: center;">
-                <button onclick="localStorage.setItem('dau_buddy_view', 'landing'); window.location.href='/'" class="nav-docs-btn"
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+            <a href="/" class="nav-brand">
+                <div class="cq-logo-mark"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <span class="cq-brand-name">Campus<span class="cq-brand-accent">Query</span></span>
+            </a>
+            <div class="nav-links" style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="localStorage.setItem('dau_buddy_view', 'landing'); window.location.href='/'" class="nav-docs-btn">
                     <i class="fa-solid fa-house"></i> Home
                 </button>
-                <button onclick="window.location.href='/docs'" class="nav-docs-btn"
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                <button onclick="window.location.href='/docs'" class="nav-docs-btn">
                     <i class="fa-solid fa-book"></i> Docs
                 </button>
                 <div class="community-dropdown-container">
-                    <button class="nav-docs-btn"
-                        style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    <button class="nav-docs-btn">
                         <i class="fa-solid fa-users"></i> Community <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
                     </button>
                     <div class="community-dropdown-menu">
@@ -60,13 +56,13 @@
                 <div class="profile-container" id="landing-profile-container" style="position: relative; display: block;">
                     <img id="landing-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
                         referrerpolicy="no-referrer" alt="Profile"
-                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid var(--brand); transition: transform 0.2s; object-fit: cover;">
 
                     <div id="landing-profile-dropdown" class="profile-dropdown"
                         style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
                         <div class="profile-info" style="position: relative; padding: 24px; text-align: center; border-bottom: 1px solid #f0f0f0;">
                             <button id="landing-close-profile-btn" style="position: absolute; top: 12px; right: 12px; background: transparent; border: none; cursor: pointer; font-size: 18px; color: #555; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
-                            <img id="landing-dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user" referrerpolicy="no-referrer" style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                            <img id="landing-dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user" referrerpolicy="no-referrer" style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #6366f1; margin-bottom: 12px; object-fit: cover;">
                             <h3 id="landing-dropdown-name" style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">Welcome!</h3>
                             <p id="landing-dropdown-email" style="margin: 0 0 8px 0; font-size: 14px; color: #555; font-family: 'Open Sans', sans-serif;">Authenticated User</p>
                             <span id="landing-dropdown-role" style="display: inline-block; background: #e0f2fe; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; font-family: 'Open Sans', sans-serif; border: 1px solid #bae6fd;">Role</span>

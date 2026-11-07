@@ -17,25 +17,29 @@
 </head>
 
 <body>
-    <div class="app-container" style="display: block; background-color: #f4f7f6; min-height: 100vh;">
+    <div class="app-container" style="display: block; background-color: #f8fafc; min-height: 100vh;">
         <div class="top-accent-bar"></div>
         <nav class="app-nav"
-            style="background: #ffffff; border-bottom: 3px solid #0f3b73; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px;">
-            <div
-                style="display: flex; align-items: center; gap: 12px; color: #0f3b73; font-size: 22px; font-weight: 700;">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Maintainer Dashboard</span>
+            style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; padding: 14px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04); margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 18px;">
+                <a href="/" class="nav-brand" style="text-decoration: none;">
+                    <div class="cq-logo-mark"><i class="fa-solid fa-bolt-lightning"></i></div>
+                    <span class="cq-brand-name">Campus<span class="cq-brand-accent">Query</span></span>
+                </a>
+                <span style="font-size: 13px; font-weight: 700; color: #6366f1; background: rgba(99, 102, 241, 0.1); padding: 4px 10px; border-radius: 999px; letter-spacing: 0.5px; text-transform: uppercase;">
+                    <i class="fa-solid fa-chart-line" style="margin-right: 4px;"></i> Maintainer Hub
+                </span>
             </div>
             <div style="display: flex; gap: 12px; align-items: center;">
                 <button onclick="window.location.href='/api-keys'" class="nav-docs-btn"
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-code"></i> Dashboard
+                    style="padding: 8px 16px; background: transparent; color: #4f46e5; border: 1px solid #4f46e5; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-code"></i> Developer API
                 </button>
 
                 <div class="profile-container" id="profile-container" style="position: relative;">
                     <img id="nav-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
                         referrerpolicy="no-referrer" alt="Profile"
-                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #6366f1; transition: transform 0.2s; object-fit: cover;">
 
                     <div id="profile-dropdown" class="profile-dropdown"
                         style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
@@ -46,7 +50,7 @@
                                     class="fa-solid fa-xmark"></i></button>
                             <img id="dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user"
                                 referrerpolicy="no-referrer"
-                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #6366f1; margin-bottom: 12px; object-fit: cover;">
                             <h3 id="dropdown-name"
                                 style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">
                                 Welcome!</h3>
@@ -168,7 +172,7 @@
 
             <div id="feedback-monitoring" style="display: none; margin-top: 40px;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h2 style="color: #0f3b73; font-size: 22px; font-weight: 700; margin: 0;">Feedback Monitoring <span
+                    <h2 style="color: #4f46e5; font-size: 22px; font-weight: 700; margin: 0;">Feedback Monitoring <span
                             id="total-feedback-count"
                             style="font-size: 14px; color: #666; font-weight: normal; margin-left: 10px;"></span></h2>
                     <div class="feedback-tabs">

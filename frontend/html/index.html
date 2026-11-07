@@ -30,23 +30,19 @@
     <div class="landing-view" id="landing-view">
         <div class="top-accent-bar"></div>
         <nav class="landing-nav">
-            <div class="nav-brand">
-                <img src="/assets/campusquery_icon.png" alt="CampusQuery"
-                    style="width: 24px; height: 24px; object-fit: contain; transform: scale(2.0) translate(6px, -1px); transform-origin: center; margin: 0 18px;">
-                <span>CampusQuery</span>
-            </div>
-            <div class="nav-links" style="display: flex; gap: 12px; align-items: center;">
-                <button onclick="window.location.href='/'" class="nav-docs-btn nav-docs-btn-active"
-                    style="padding: 8px 16px; background: #0f3b73; color: #ffffff; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+            <a href="/" class="nav-brand">
+                <div class="cq-logo-mark"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <span class="cq-brand-name">Campus<span class="cq-brand-accent">Query</span></span>
+            </a>
+            <div class="nav-links" style="display: flex; gap: 10px; align-items: center;">
+                <button onclick="window.location.href='/'" class="nav-docs-btn nav-docs-btn-active">
                     <i class="fa-solid fa-house"></i> Home
                 </button>
-                <button onclick="window.location.href='/docs'" class="nav-docs-btn"
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                <button onclick="window.location.href='/docs'" class="nav-docs-btn">
                     <i class="fa-solid fa-book"></i> Docs
                 </button>
                 <div class="community-dropdown-container">
-                    <button class="nav-docs-btn"
-                        style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    <button class="nav-docs-btn">
                         <i class="fa-solid fa-users"></i> Community <i class="fa-solid fa-chevron-down"
                             style="font-size: 10px;"></i>
                     </button>
@@ -65,12 +61,12 @@
                         </a>
                     </div>
                 </div>
-                <button class="nav-signout-btn" id="nav-signin-btn">Sign In</button>
+                <button class="nav-signin-btn" id="nav-signin-btn">Sign In</button>
                 <div class="profile-container" id="landing-profile-container"
                     style="position: relative; display: none;">
                     <img id="landing-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
                         referrerpolicy="no-referrer" alt="Profile"
-                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid var(--brand); transition: transform 0.2s; object-fit: cover;">
 
                     <div id="landing-profile-dropdown" class="profile-dropdown"
                         style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
@@ -81,7 +77,7 @@
                                     class="fa-solid fa-xmark"></i></button>
                             <img id="landing-dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user"
                                 referrerpolicy="no-referrer"
-                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--brand); margin-bottom: 12px; object-fit: cover;">
                             <h3 id="landing-dropdown-name"
                                 style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">
                                 Welcome!</h3>
@@ -119,38 +115,52 @@
         <header class="landing-hero">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fa-solid fa-sparkles"></i> Dhirubhai Ambani University AI Assistant
+                    <i class="fa-solid fa-sparkles"></i> Intelligent Campus Knowledge Engine &bull; Fast &amp; Structured
                 </div>
-                <h1>CampusQuery <br><span class="hero-highlight" id="typewriter"></span><span class="cursor">|</span></h1>
-                <p>Securely query university information right from your favorite AI portals like Cursor, Windsurf,
-                    OpenCode, or
-                    Claude Desktop. Role-based access ensures data privacy.</p>
+                <h1>Instant Answers for <br><span class="hero-highlight" id="typewriter">Campus Intelligence</span><span class="cursor">|</span></h1>
+                <p>Connect your favorite AI editors (Cursor, Windsurf, Claude) or query institutional data directly. Real-time access to faculty timetables, free classrooms, library catalog, and academic rules.</p>
                 <div class="hero-actions">
-                    <a href="/chat" class="hero-btn secondary"><i class="fa-regular fa-comment-dots" style="margin-right: 8px;"></i> Access Chat</a>
-                    <a href="/api-keys" class="hero-btn primary"><i class="fa-solid fa-plug" style="margin-right: 8px;"></i> Configure MCP Server</a>
+                    <a href="/chat" class="hero-btn primary"><i class="fa-solid fa-comments" style="margin-right: 8px;"></i> Open Campus Chat</a>
+                    <a href="/api-keys" class="hero-btn secondary"><i class="fa-solid fa-plug" style="margin-right: 8px;"></i> Connect MCP Server</a>
                     <button type="button" class="hero-btn secondary hero-share-btn" data-share>
                         <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
                         <span>Share CampusQuery</span>
                     </button>
+                </div>
+                <div class="hero-quick-prompts">
+                    <span>Popular Queries:</span>
+                    <a href="/chat?prompt=Which%20classrooms%20are%20free%20right%20now%3F" class="quick-pill"><i class="fa-solid fa-building"></i> Free Classrooms</a>
+                    <a href="/chat?prompt=When%20is%20the%20next%20holiday%3F" class="quick-pill"><i class="fa-solid fa-calendar-day"></i> Next Holiday</a>
+                    <a href="/chat?prompt=Find%20me%20a%20book%20on%20Machine%20Learning" class="quick-pill"><i class="fa-solid fa-book"></i> Library Books</a>
+                    <a href="/chat?prompt=What%20is%20the%20minimum%20CPI%20required%20for%20BTech%20graduation%3F" class="quick-pill"><i class="fa-solid fa-graduation-cap"></i> CPI Rules</a>
                 </div>
             </div>
         </header>
 
         <section class="landing-features">
             <div class="feature-card">
+                <span class="feat-tag">Live RAG</span>
                 <div class="feat-icon"><i class="fa-solid fa-database"></i></div>
-                <h3>Centralized Data</h3>
-                <p>Connect to the faculty and student DB instantly over your local network.</p>
+                <h3>Unified Institutional Data</h3>
+                <p>Live-synchronized access across faculty directories, PhD scholars, weekly timetables, and 28,000+ library records.</p>
             </div>
             <div class="feature-card">
+                <span class="feat-tag">Zero Trust</span>
                 <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
                 <h3>Role-Based Security</h3>
-                <p>Strict RBAC ensures users only access permitted institutional endpoints.</p>
+                <p>Automatic role validation (Student, Faculty, Staff) via institutional Google Sign-In guarantees secure data privacy.</p>
             </div>
             <div class="feature-card">
+                <span class="feat-tag">FastMCP SSE</span>
                 <div class="feat-icon"><i class="fa-solid fa-plug"></i></div>
-                <h3>Plug & Play Integration</h3>
-                <p>No complex setup. Just copy the JSON snippet into your MCP client config.</p>
+                <h3>Native MCP Integration</h3>
+                <p>Seamlessly query within Cursor, Claude Desktop, Windsurf, OpenCode, and Codex with zero setup friction.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feat-tag">Hybrid Search</span>
+                <div class="feat-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Verified Grounded Answers</h3>
+                <p>PostgreSQL full-text retrieval ranked by relevance with automatic multi-model fallback for reliable precision.</p>
             </div>
         </section>
 
@@ -184,39 +194,47 @@
     <script src="/js/login-modal.js"></script>
 
     <script>
-        const textToType = "Your AI Campus Guide";
+        const phrases = [
+            "Campus Intelligence",
+            "Free Classrooms Now",
+            "Faculty Schedules",
+            "Library OPAC Search",
+            "Academic Rules & CPI"
+        ];
         const typewriterElement = document.getElementById('typewriter');
-        let i = 0;
+        let phraseIdx = 0;
+        let charIdx = 0;
         let isDeleting = false;
 
         function typeWriter() {
-            if (!isDeleting && i <= textToType.length) {
-                typewriterElement.innerHTML = textToType.substring(0, i);
-                i++;
-                if (i <= textToType.length) {
-                    setTimeout(typeWriter, 100); // Typing speed
+            const currentPhrase = phrases[phraseIdx];
+            if (!isDeleting && charIdx <= currentPhrase.length) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIdx);
+                charIdx++;
+                if (charIdx <= currentPhrase.length) {
+                    setTimeout(typeWriter, 75);
                 } else {
                     isDeleting = true;
-                    setTimeout(typeWriter, 2000); // Wait before deleting
+                    setTimeout(typeWriter, 2000);
                 }
-            } else if (isDeleting && i >= 0) {
-                typewriterElement.innerHTML = textToType.substring(0, i);
-                i--;
-                if (i >= 0) {
-                    setTimeout(typeWriter, 40); // Deleting speed
+            } else if (isDeleting && charIdx >= 0) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIdx);
+                charIdx--;
+                if (charIdx >= 0) {
+                    setTimeout(typeWriter, 35);
                 } else {
                     isDeleting = false;
-                    setTimeout(typeWriter, 500); // Wait before typing again
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    setTimeout(typeWriter, 400);
                 }
             }
         }
 
-        // Start typing after a short delay
         setTimeout(typeWriter, 500);
     </script>
     <style>
         .cursor {
-            color: #fca311;
+            color: #38bdf8;
             font-weight: 300;
             animation: blink 1s step-end infinite;
         }

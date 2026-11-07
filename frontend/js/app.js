@@ -579,7 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabClaude) {
         if (tabClaude) tabClaude.addEventListener("click", () => {
             resetTabs();
-            tabClaude.style.background = "#0f3b73";
+            tabClaude.style.background = "#4f46e5";
             tabClaude.style.color = "white";
             contentClaude.style.display = "block";
         });
@@ -588,7 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabCursor) {
         if (tabCursor) tabCursor.addEventListener("click", () => {
             resetTabs();
-            tabCursor.style.background = "#0f3b73";
+            tabCursor.style.background = "#4f46e5";
             tabCursor.style.color = "white";
             contentCursor.style.display = "block";
         });
@@ -597,7 +597,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabOpenCode) {
         if (tabOpenCode) tabOpenCode.addEventListener("click", () => {
             resetTabs();
-            tabOpenCode.style.background = "#0f3b73";
+            tabOpenCode.style.background = "#4f46e5";
             tabOpenCode.style.color = "white";
             contentOpenCode.style.display = "block";
         });

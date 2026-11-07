@@ -43,13 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!document.getElementById("login-overlay")) {
         const loginHtml = `
             <!-- ── Login Container Modal ─────────────────────────────────────── -->
-            <div class="login-overlay" id="login-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0f3b73; z-index: 1000; justify-content: center; align-items: center;">
-                <div class="login-card" style="background: white; border-radius: 8px; padding: 30px; max-width: 400px; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.2); position: relative;">
+            <div class="login-overlay" id="login-overlay" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 50% 20%, rgba(99, 102, 241, 0.25) 0%, rgba(15, 23, 42, 0.85) 100%), rgba(11, 15, 25, 0.95); backdrop-filter: blur(12px); z-index: 1000; justify-content: center; align-items: center;">
+                <div class="login-card" style="background: white; border-radius: 18px; padding: 36px; max-width: 400px; width: 100%; box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.25); border: 1px solid rgba(226, 232, 240, 0.9); position: relative;">
                     <button class="close-modal-btn" id="close-login-btn" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 20px; cursor: pointer; color: #666;"><i class="fa-solid fa-xmark"></i></button>
-                    <div class="login-header" style="text-align: center; margin-bottom: 20px;">
-                        <img src="/assets/campusquery_icon.png" alt="CampusQuery" class="login-logo" style="width: 48px; height: 48px; margin-bottom: 10px; object-fit: contain;">
-                        <h2 style="margin: 0; font-size: 24px; color: #111;">CampusQuery</h2>
-                        <p style="margin: 5px 0 0; font-size: 14px; color: #666;">Sign in with your university account to authenticate.</p>
+                    <div class="login-header" style="text-align: center; margin-bottom: 24px;">
+                        <div class="cq-logo-mark" style="width: 48px; height: 48px; border-radius: 14px; font-size: 22px; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-bolt-lightning"></i>
+                        </div>
+                        <h2 style="margin: 0; font-size: 24px; color: #0f172a; font-family: 'Outfit', sans-serif; font-weight: 800;">Campus<span class="cq-brand-accent">Query</span></h2>
+                        <p style="margin: 6px 0 0; font-size: 14px; color: #64748b;">Sign in with your university account to authenticate.</p>
                     </div>
 
                     <div class="login-error" id="login-error" style="display: none; background: #fee2e2; color: #b91c1c; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 13px; align-items: center; gap: 8px;">

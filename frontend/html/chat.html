@@ -45,24 +45,20 @@
     <div style="display: flex; flex-direction: column; height: 100vh; overflow: hidden;">
         <div class="top-accent-bar"></div>
         <nav class="landing-nav" id="chat-top-nav">
-            <div class="nav-brand">
-                <img src="/assets/campusquery_icon.png" alt="CampusQuery"
-                    style="width: 24px; height: 24px; object-fit: contain; transform: scale(2.0) translate(6px, -1px); transform-origin: center; margin: 0 18px;">
-                <span>CampusQuery</span>
-            </div>
-            <div class="nav-links" style="display: flex; gap: 12px; align-items: center;">
+            <a href="/" class="nav-brand">
+                <div class="cq-logo-mark"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <span class="cq-brand-name">Campus<span class="cq-brand-accent">Query</span></span>
+            </a>
+            <div class="nav-links" style="display: flex; gap: 10px; align-items: center;">
                 <button onclick="localStorage.setItem('dau_buddy_view', 'landing'); window.location.href='/'"
-                    class="nav-docs-btn"
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    class="nav-docs-btn">
                     <i class="fa-solid fa-house"></i> Home
                 </button>
-                <button onclick="window.location.href='/docs'" class="nav-docs-btn "
-                    style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                <button onclick="window.location.href='/docs'" class="nav-docs-btn">
                     <i class="fa-solid fa-book"></i> Docs
                 </button>
                 <div class="community-dropdown-container">
-                    <button class="nav-docs-btn"
-                        style="padding: 8px 16px; background: transparent; color: #0f3b73; border: 1px solid #0f3b73; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'Open Sans', sans-serif; display: flex; align-items: center; gap: 8px; transition: all 0.2s; text-decoration: none;">
+                    <button class="nav-docs-btn">
                         <i class="fa-solid fa-users"></i> Community <i class="fa-solid fa-chevron-down"
                             style="font-size: 10px;"></i>
                     </button>
@@ -89,7 +85,7 @@
                     style="position: relative; display: none;">
                     <img id="landing-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
                         referrerpolicy="no-referrer" alt="Profile"
-                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #6366f1; transition: transform 0.2s; object-fit: cover;">
 
                     <div id="landing-profile-dropdown" class="profile-dropdown"
                         style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
@@ -100,7 +96,7 @@
                                     class="fa-solid fa-xmark"></i></button>
                             <img id="landing-dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user"
                                 referrerpolicy="no-referrer"
-                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #6366f1; margin-bottom: 12px; object-fit: cover;">
                             <h3 id="landing-dropdown-name"
                                 style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">
                                 Welcome!</h3>
@@ -184,7 +180,7 @@
 
                         <div class="prompt-grid">
                             <button class="prompt-card" data-prompt="Which classrooms are free right now?">
-                                <i class="fa-solid fa-building card-icon"></i>
+                                <i class="fa-solid fa-building card-icon icon-teal"></i>
                                 <div class="card-text">
                                     <h4>Find a free classroom</h4>
                                     <p>"Which classrooms are free right now?"</p>
@@ -192,7 +188,7 @@
                             </button>
                             <button class="prompt-card"
                                 data-prompt="When are Prof Yash Agrawal and Prof Gautam Dutta both available for a meeting today?">
-                                <i class="fa-solid fa-user-tie card-icon"></i>
+                                <i class="fa-solid fa-user-tie card-icon icon-indigo"></i>
                                 <div class="card-text">
                                     <h4>Find a meeting slot</h4>
                                     <p>"When are Prof Yash Agrawal and Prof Gautam Dutta both available for a meeting
@@ -200,14 +196,14 @@
                                 </div>
                             </button>
                             <button class="prompt-card" data-prompt="When is the next holiday?">
-                                <i class="fa-solid fa-calendar-days card-icon"></i>
+                                <i class="fa-solid fa-calendar-days card-icon icon-amber"></i>
                                 <div class="card-text">
                                     <h4>Upcoming Holidays</h4>
                                     <p>"When is the next holiday?"</p>
                                 </div>
                             </button>
                             <button class="prompt-card" data-prompt="Find me a book on computer networks">
-                                <i class="fa-solid fa-book card-icon"></i>
+                                <i class="fa-solid fa-book card-icon icon-emerald"></i>
                                 <div class="card-text">
                                     <h4>Library Search</h4>
                                     <p>"Find me a book on computer networks"</p>
@@ -215,7 +211,7 @@
                             </button>
                             <button class="prompt-card"
                                 data-prompt="What is the minimum CPI required for BTech graduation?">
-                                <i class="fa-solid fa-file-lines card-icon"></i>
+                                <i class="fa-solid fa-file-lines card-icon icon-purple"></i>
                                 <div class="card-text">
                                     <h4>Academic Rules</h4>
                                     <p>"What is the minimum CPI required for BTech graduation?"</p>
@@ -223,7 +219,7 @@
                             </button>
                             <button class="prompt-card"
                                 data-prompt="Who are the PhD scholars working on Machine Learning?">
-                                <i class="fa-solid fa-user-graduate card-icon"></i>
+                                <i class="fa-solid fa-user-graduate card-icon icon-rose"></i>
                                 <div class="card-text">
                                     <h4>PhD Scholars</h4>
                                     <p>"Who are the PhD scholars working on Machine Learning?"</p>

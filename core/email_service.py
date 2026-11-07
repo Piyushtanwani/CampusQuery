@@ -78,8 +78,8 @@ Submitted At: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
     <html>
       <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 40px 20px;">
         <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-          <div style="background-color: #0f3b73; padding: 25px; text-align: center;">
-            <div style="color: #93c5fd; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">CampusQuery</div>
+          <div style="background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%); padding: 25px; text-align: center;">
+            <div style="color: #c7d2fe; font-size: 14px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">CampusQuery</div>
             <h2 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600;">New Feedback Received</h2>
           </div>
           <div style="padding: 30px;">

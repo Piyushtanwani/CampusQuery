@@ -26,8 +26,10 @@
     <div class="app-container" id="app-container">
         <div class="top-accent-bar"></div> <!-- Dashboard Navigation -->
         <nav class="app-nav">
-            <div class="nav-brand"> <img src="/assets/campusquery_icon.png" alt="CampusQuery"
-                    style="width: 24px; height: 24px; object-fit: contain; transform: scale(2.0) translate(6px, -1px); transform-origin: center; margin: 0 18px;"> <span>CampusQuery</span> </div>
+            <a href="/" class="nav-brand">
+                <div class="cq-logo-mark"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <span class="cq-brand-name">Campus<span class="cq-brand-accent">Query</span></span>
+            </a>
             <div class="nav-links">
                 <button onclick="localStorage.setItem('dau_buddy_view', 'landing'); window.location.href='/'"
                     class="nav-docs-btn">
@@ -64,7 +66,7 @@
                 <div class="profile-container" id="profile-container" style="position: relative;">
                     <img id="nav-profile-trigger" src="https://lh3.googleusercontent.com/a/default-user"
                         referrerpolicy="no-referrer" alt="Profile"
-                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #0f3b73; transition: transform 0.2s; object-fit: cover;">
+                        style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #6366f1; transition: transform 0.2s; object-fit: cover;">
 
                     <div id="profile-dropdown" class="profile-dropdown"
                         style="display: none; flex-direction: column; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); width: 300px; z-index: 1000; overflow: hidden;">
@@ -75,7 +77,7 @@
                                     class="fa-solid fa-xmark"></i></button>
                             <img id="dropdown-avatar" src="https://lh3.googleusercontent.com/a/default-user"
                                 referrerpolicy="no-referrer"
-                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #0f3b73; margin-bottom: 12px; object-fit: cover;">
+                                style="width: 72px; height: 72px; border-radius: 50%; border: 2px solid #6366f1; margin-bottom: 12px; object-fit: cover;">
                             <h3 id="dropdown-name"
                                 style="margin: 0 0 4px 0; font-size: 18px; color: #111; font-family: 'Open Sans', sans-serif; font-weight: 600;">
                                 Welcome!</h3>

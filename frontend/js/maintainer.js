@@ -212,11 +212,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     datasets: [{
                         label: 'New Signups',
                         data: data.signups_over_time.map(d => d.count),
-                        borderColor: '#0f3b73',
-                        backgroundColor: 'rgba(15, 59, 115, 0.1)',
+                        borderColor: '#4f46e5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
                         fill: true,
                         tension: 0.3,
-                        pointBackgroundColor: '#0f3b73'
+                        pointBackgroundColor: '#4f46e5'
                     }]
                 },
                 options: {
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // 3. Client Usage Pie Chart
         const clientsCtx = document.getElementById('clients-chart');
         if (clientsCtx && data.clients) {
-            const colors = ['#0f3b73', '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+            const colors = ['#4f46e5', '#06b6d4', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
             new Chart(clientsCtx, {
                 type: 'doughnut',
                 data: {
